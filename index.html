@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Harness, Control plane for AI-assisted work</title>
+    <meta
+      name="description"
+      content="Harness is an open source control plane for AI-assisted work. It evaluates whether work is actually done instead of trusting completion claims alone."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">H</span>
+          <span class="brand-name">Harness</span>
+        </div>
+        <nav>
+          <a href="#how-it-works">How it works</a>
+          <a href="#proof">Proof</a>
+          <a href="#scope">Scope</a>
+          <a href="#getting-started">Getting started</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero grid-two">
+          <div>
+            <p class="eyebrow">Open source control plane</p>
+            <h1>Trust AI execution less. Verify completion more.</h1>
+            <p class="lede">
+              Harness evaluates whether work is actually done instead of trusting
+              agent completion claims on their own.
+            </p>
+            <p class="hero-copy">
+              It is built for AI-assisted workflows where execution, evidence,
+              reconciliation, and review all matter. The goal is not more agent
+              optimism. The goal is canonical truth.
+            </p>
+            <div class="cta-row">
+              <a class="button primary" href="https://github.com/sfayka/Harness">View GitHub</a>
+              <a class="button secondary" href="#getting-started">Read the setup path</a>
+            </div>
+          </div>
+          <div class="hero-panel card">
+            <div class="terminal-head">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="terminal-body">
+              <p><span class="mono dim">task:</span> kno-175</p>
+              <p><span class="mono dim">claim:</span> completed</p>
+              <p><span class="mono dim">status:</span> reconciling</p>
+              <p><span class="mono dim">reason:</span> missing_pr_after_execution</p>
+              <p><span class="mono dim">action:</span> repair, reevaluate, decide</p>
+              <div class="signal ok">completion requires evidence-backed reevaluation</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section intro-grid" id="problem">
+          <div class="card statement">
+            <p class="section-label">The problem</p>
+            <h2>Execution is not completion.</h2>
+            <p>
+              Agents can say work is done. Logs can say a command succeeded.
+              Neither is enough when teams need durable truth, trustworthy
+              artifacts, and explicit review paths.
+            </p>
+          </div>
+          <div class="card statement">
+            <p class="section-label">The position</p>
+            <h2>Harness treats completion as a governed decision.</h2>
+            <p>
+              It evaluates task state against evidence, reconciliation facts,
+              and review decisions before allowing work to count as complete.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="what-it-does">
+          <div class="section-heading">
+            <p class="section-label">What Harness does</p>
+            <h2>Product framing without product theater.</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="card feature">
+              <h3>Canonical task evaluation</h3>
+              <p>
+                Accepts task envelopes and reasons over current state instead of
+                relying on agent-reported success.
+              </p>
+            </article>
+            <article class="card feature">
+              <h3>Evidence-backed completion</h3>
+              <p>
+                Uses artifacts, facts, and explicit lifecycle transitions to
+                determine whether completion should be trusted.
+              </p>
+            </article>
+            <article class="card feature">
+              <h3>Governed reconciliation</h3>
+              <p>
+                Repairs recoverable mismatches, then returns to reevaluation
+                rather than silently accepting incomplete work.
+              </p>
+            </article>
+            <article class="card feature">
+              <h3>Explicit review paths</h3>
+              <p>
+                Escalates when automation should stop and a human decision is
+                required.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="how-it-works">
+          <div class="section-heading">
+            <p class="section-label">How it works</p>
+            <h2>A simple loop with stronger truth conditions.</h2>
+          </div>
+          <div class="flow card">
+            <div class="flow-step">
+              <span class="step-index">01</span>
+              <h3>Ingress</h3>
+              <p>Task envelopes arrive from manual, Linear, or executor-adjacent inputs.</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="step-index">02</span>
+              <h3>Execution claim</h3>
+              <p>Claims are intercepted as inputs, not accepted as truth.</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="step-index">03</span>
+              <h3>Evaluation</h3>
+              <p>Harness checks evidence, current-run context, and lifecycle conditions.</p>
+            </div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">
+              <span class="step-index">04</span>
+              <h3>Decision</h3>
+              <p>Complete, fail, reconcile, or escalate to review.</p>
+            </div>
+          </div>
+          <div class="callout-grid">
+            <div class="card callout">
+              <h3>Key design rule</h3>
+              <p>Harness spends automation before operator attention.</p>
+            </div>
+            <div class="card callout">
+              <h3>Why that matters</h3>
+              <p>Teams get clearer truth without pretending every recovery path is safe.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="proof">
+          <div class="section-heading">
+            <p class="section-label">Governed reconciliation and proof</p>
+            <h2>Show the failure path and the success path.</h2>
+          </div>
+          <div class="proof-grid">
+            <article class="card proof-card">
+              <p class="proof-tag">KNO-174</p>
+              <h3>Recovery blocked</h3>
+              <p>
+                Missing PR after execution leads to reconciliation, recovery is
+                blocked, and the task escalates explicitly into review.
+              </p>
+              <p class="proof-outcome bad">Outcome: in_review, not silent success.</p>
+            </article>
+            <article class="card proof-card">
+              <p class="proof-tag">KNO-175</p>
+              <h3>Recovery succeeds</h3>
+              <p>
+                Harness repairs the missing artifact, attaches the evidence,
+                reevaluates, and only then allows the task to complete.
+              </p>
+              <p class="proof-outcome good">Outcome: completed through reevaluation.</p>
+            </article>
+          </div>
+          <p class="section-note">
+            This site is intentionally proof-oriented. Harness should be judged
+            by what it actually governs, not by broad AI workflow promises.
+          </p>
+        </section>
+
+        <section class="section" id="scope">
+          <div class="section-heading">
+            <p class="section-label">Current scope</p>
+            <h2>Honest boundaries are part of the value.</h2>
+          </div>
+          <div class="scope-grid">
+            <div class="card scope-list">
+              <h3>Available now</h3>
+              <ul>
+                <li>Python backend for canonical evaluation</li>
+                <li>Read-only Next.js dashboard</li>
+                <li>File and Postgres persistence</li>
+                <li>Completion-claim interception</li>
+                <li>Governed reconciliation for missing PR after execution</li>
+              </ul>
+            </div>
+            <div class="card scope-list">
+              <h3>Still limited</h3>
+              <ul>
+                <li>No mutation-first dashboard UI</li>
+                <li>No broad claim of fully automated reconciliation classes</li>
+                <li>No generic agent runtime positioning</li>
+                <li>No claim that all integrations are mature sync systems</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="getting-started">
+          <div class="section-heading">
+            <p class="section-label">Getting started</p>
+            <h2>Start with the repo, then follow the docs.</h2>
+          </div>
+          <div class="card setup-card">
+            <div class="setup-block">
+              <p class="setup-label">Repository</p>
+              <a href="https://github.com/sfayka/Harness" class="mono link-inline">github.com/sfayka/Harness</a>
+            </div>
+            <div class="setup-block">
+              <p class="setup-label">Suggested first reads</p>
+              <ul>
+                <li>README</li>
+                <li>docs/architecture/system-context.md</li>
+                <li>docs/demo/operator-walkthrough.md</li>
+                <li>docs/setup/local-development.md</li>
+              </ul>
+            </div>
+            <div class="setup-block code-block">
+              <p class="setup-label">Local sketch</p>
+<pre><code>pip install -r requirements.txt
+python -m modules.api --store-root .harness-store
+
+pnpm install --frozen-lockfile
+pnpm dev</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="section philosophy">
+          <div class="card philosophy-card">
+            <p class="section-label">Philosophy</p>
+            <h2>Verified beats asserted.</h2>
+            <p>
+              Harness is opinionated about the difference between running work
+              and finishing work. It is built around evidence, lifecycle
+              enforcement, and reviewable decisions because those are the parts
+              that keep automation honest.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Harness, open source control plane for AI-assisted work.</p>
+        <div class="footer-links">
+          <a href="https://github.com/sfayka/Harness">GitHub</a>
+          <a href="https://github.com/sfayka/harness-site">Site repo</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

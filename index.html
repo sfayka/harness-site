@@ -36,9 +36,12 @@
           <p class="eyebrow">Open source control plane</p>
           <h1>Harness verifies completion instead of trusting AI claims.</h1>
           <p class="lede">
-            It is built for workflows where execution alone is not enough, and
-            where evidence, reconciliation, and review decide whether work is
-            actually done.
+            It is for workflows where execution is easy to report, but harder to
+            trust.
+          </p>
+          <p class="hero-copy">
+            Harness evaluates whether work is actually done using evidence,
+            reconciliation, and explicit review boundaries.
           </p>
           <div class="cta-row">
             <a class="button primary" href="https://github.com/sfayka/Harness">View GitHub</a>
@@ -50,47 +53,44 @@
           <p class="section-label">Why it exists</p>
           <h2>Execution is not completion.</h2>
           <p>
-            Agents can report success. Commands can exit cleanly. A branch can
-            contain code. None of that is enough on its own when the real
-            question is whether the task is complete, trustworthy, and ready to
-            count.
+            Agents can report success. Commands can finish cleanly. A branch
+            can contain code. None of that is enough on its own when the real
+            question is whether the task is complete and trustworthy.
           </p>
           <p>
-            Harness is a control plane for that distinction. It treats
-            completion as a governed decision backed by evidence, current task
-            state, reconciliation facts, and explicit review paths.
+            Harness is built for that distinction. It treats completion as a
+            governed decision, not as an assertion.
           </p>
         </section>
 
         <section class="section" id="what-it-does">
           <p class="section-label">What Harness does</p>
-          <div class="stack">
+          <div class="stack spacious">
             <article class="card block">
-              <h3>Canonical evaluation</h3>
+              <h3>Evaluates canonical task state</h3>
               <p>
-                Harness evaluates task submissions and completion claims against
-                current state instead of accepting agent output as truth.
+                Harness reasons over the task itself instead of accepting agent
+                output as truth.
               </p>
             </article>
             <article class="card block">
-              <h3>Evidence-backed completion</h3>
+              <h3>Requires evidence for completion</h3>
               <p>
                 Completion depends on artifacts, coherent run context, and the
-                lifecycle rules that govern the task.
+                rules that govern the task lifecycle.
               </p>
             </article>
             <article class="card block">
-              <h3>Governed reconciliation</h3>
+              <h3>Reconciles recoverable defects</h3>
               <p>
-                Recoverable defects can be repaired and sent back through
-                reevaluation instead of being mistaken for progress.
+                When something is fixable, Harness can repair it and send the
+                task back through reevaluation.
               </p>
             </article>
             <article class="card block">
-              <h3>Explicit review boundaries</h3>
+              <h3>Escalates when review should take over</h3>
               <p>
-                When automation should stop, Harness escalates instead of
-                pretending the work is done.
+                When automation should stop, Harness makes that explicit.
               </p>
             </article>
           </div>
@@ -98,7 +98,7 @@
 
         <section class="section" id="how-it-works">
           <p class="section-label">How it works</p>
-          <div class="card flow-vertical">
+          <div class="card flow-vertical relaxed">
             <div class="flow-step">
               <span class="step-index">01</span>
               <div>
@@ -119,7 +119,7 @@
               <span class="step-index">03</span>
               <div>
                 <h3>Evaluation and reconciliation</h3>
-                <p>Harness checks evidence, current-run context, and mismatch or recovery conditions.</p>
+                <p>Harness checks evidence, run context, and recovery conditions.</p>
               </div>
             </div>
             <div class="flow-divider"></div>
@@ -136,14 +136,14 @@
 
         <section class="section" id="proof">
           <p class="section-label">Proof</p>
-          <div class="stack">
+          <div class="stack spacious">
             <article class="card block proof-block">
               <p class="proof-tag">KNO-174</p>
               <h3>Recovery blocked</h3>
               <p>
                 Missing PR after execution leads to reconciliation, recovery is
-                blocked, and the task escalates into review instead of being
-                accepted as complete.
+                blocked, and the task moves into review instead of being treated
+                as complete.
               </p>
               <p class="proof-outcome bad">Outcome: in review, not silent success.</p>
             </article>
@@ -161,7 +161,7 @@
 
         <section class="section" id="scope">
           <p class="section-label">Current scope</p>
-          <div class="card split-block">
+          <div class="card split-block relaxed">
             <div>
               <h3>What exists now</h3>
               <ul>
@@ -186,14 +186,14 @@
 
         <section class="section" id="reading">
           <p class="section-label">Related reading</p>
-          <div class="card links-card">
+          <div class="card links-card relaxed">
             <h2>More context from Knox</h2>
             <p>
               Harness sits inside a broader operating view of AI-assisted work,
               human review, and systems that should be judged by what they can
               verify.
             </p>
-            <div class="link-stack">
+            <div class="link-stack roomy">
               <a class="text-link" href="https://knoxanalytics.com/">
                 Knox Analytics
                 <span>knoxanalytics.com</span>
@@ -224,11 +224,10 @@
 
         <section class="section" id="getting-started">
           <p class="section-label">Getting started</p>
-          <div class="card setup-card">
+          <div class="card setup-card relaxed">
             <p>
-              Start with the repository, then read the architecture and local
-              setup docs. Harness is easiest to understand through the README,
-              the proof cases, and the operator walkthrough.
+              Start with the repository. Then read the architecture notes, the
+              proof cases, and the local setup docs.
             </p>
             <a href="https://github.com/sfayka/Harness" class="mono link-inline">github.com/sfayka/Harness</a>
 <pre><code>pip install -r requirements.txt
